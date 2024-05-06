@@ -3,10 +3,10 @@
 	<div class="navbar-collapse">
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="/">Inicio</a></li>
-			<li><a href="/list-todos">Usarios</a></li>
+			<li><a href="/list-clases">Clases</a></li>
 		</ul>
 		<ul class="nav navbar-nav">
-			<li><a href="/logout">Cerrar Sesión</a></li>
+			<li><a href="/logout">Cerrar Sesion</a></li>
 		</ul>
 	</div>
 </nav>

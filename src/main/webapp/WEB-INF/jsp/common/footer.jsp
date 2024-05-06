@@ -9,8 +9,8 @@
 </script>
 
 
-<div class="footer">
-	Fixed Footer
-</div>
+ 	<div class="footer">
+        <p>&copy; John Stiven Sanchez Burbano. Todos los derechos reservados. 2024</a>.</p>
+    </div>
 </body>
 </html>
