@@ -16,7 +16,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 
-
 @Entity
 @Table(name="usuarios")
 public class Usuario {
@@ -64,6 +63,14 @@ public class Usuario {
 		this.contrasenia = contrasenia;
 	}
 	
+	public void setRoles(Set<Rol> roles) {
+	    this.roles = roles;
+	}
+
+	public Set<Rol> getRoles() {
+	    return roles;
+	}
+
 	
 
 }

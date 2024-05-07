@@ -3,7 +3,7 @@
 
 <div class="container">
 	<div>
-		<a type="button" class="btn btn-primary btn-md" href="/add-clase">Nueva clase</a>
+			<a type="button" class="btn btn-primary btn-md" href="/add-clase">Nueva clase</a>
 	</div>
 	<br>
 	<div class="panel panel-primary">

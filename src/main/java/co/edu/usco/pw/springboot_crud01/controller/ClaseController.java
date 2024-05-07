@@ -29,26 +29,21 @@ public class ClaseController {
 
 	@RequestMapping(value = "/list-clases", method = RequestMethod.GET)
 	public String showClases(ModelMap model) {
-		model.put("clases", claseService.getClasesByUser("rector"));
-		
-		if(getLoggedinUserName()=="rector") {
-			return "list-clases";
-		}else {
-			return "list-clases-docente";
-		}
-		
+		model.put("clases", claseService.getClasesByUser("RECTOR"));
+
+		return "list-clases";
 	}
 	
-	private String getLoggedinUserName() {
-		Object principal = SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
-		
-		if (principal instanceof UserDetails) {
-			return ((UserDetails) principal).getUsername();
-		}
-		
-		return principal.toString();
-	}
+//	private String getLoggedinUserName() {
+//		Object principal = SecurityContextHolder.getContext()
+//				.getAuthentication().getPrincipal();
+//		
+//		if (principal instanceof UserDetails) {
+//			return ((UserDetails) principal).getUsername();
+//		}
+//		
+//		return principal.toString();
+//	}
 	
 
 	@RequestMapping(value = "/add-clase", method = RequestMethod.GET)

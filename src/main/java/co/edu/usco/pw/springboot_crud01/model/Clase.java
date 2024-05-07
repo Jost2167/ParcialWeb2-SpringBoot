@@ -18,7 +18,7 @@ public class Clase {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private String userName="rector";
+	private String userName="RECTOR";
 	
 	
 	@Size(max = 20, message = "Longuitud máxima 20 caracteres")
