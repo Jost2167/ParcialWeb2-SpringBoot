@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -19,14 +20,21 @@ public class Clase {
 	
 	private String userName="rector";
 	
+	
 	@Size(max = 20, message = "Longuitud máxima 20 caracteres")
 	private String nombre;
 	
+	
 	private int horario;
+	
 	
 	@Size(max = 100, message = "Longuitud máxima 100 caracteres")
 	private String docente;
+	
+	
 	private String salon;
+	
+	
 	private String estado;
 	
 	public Clase() {}
