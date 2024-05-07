@@ -21,9 +21,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import co.edu.usco.pw.springboot_crud01.model.Clase;
-import co.edu.usco.pw.springboot_crud01.model.Estado;
+import co.edu.usco.pw.springboot_crud01.model.Docente;
 import co.edu.usco.pw.springboot_crud01.service.IClaseService;
-import co.edu.usco.pw.springboot_crud01.service.IEstadoService;
+import co.edu.usco.pw.springboot_crud01.service.IDocenteService;
+
 
 @Controller
 public class ClaseController {
@@ -32,7 +33,7 @@ public class ClaseController {
 	private IClaseService claseService;
 
 	 @Autowired
-	 private IEstadoService estadoService;
+	 private IDocenteService docenteService;
 	 
 	 
 	
@@ -58,8 +59,8 @@ public class ClaseController {
 	@RequestMapping(value = "/add-clase", method = RequestMethod.GET)
 	public String showAddClasePage(ModelMap model) {
 		model.addAttribute("clase", new Clase());
-		List<Estado> estados = estadoService.estados();
-		model.addAttribute("estados", estados);
+		List<Docente> docentes = docenteService.docentes();
+		model.addAttribute("docentes", docentes);
 		return "clase";
 	}
 
@@ -91,8 +92,8 @@ public class ClaseController {
 	        return "error";
 	    }
 
-	    List<Estado> estados = estadoService.estados();
-	    model.addAttribute("estados", estados);
+	    List<Docente> docentes = docenteService.docentes();
+	    model.addAttribute("docentes", docentes);
 	    return "clase";
 	}
 

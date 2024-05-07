@@ -13,39 +13,44 @@
 						
 						
 						<fieldset class="form-group">
-                            <form:label path="nombre">Clase:</form:label>
+                            <form:label path="nombre">Asignatura:</form:label>
                             <form:input path="nombre" type="text" class="form-control" required="required" />
                             <form:errors path="nombre" cssClass="text-warning" />
 						</fieldset>
 
-                        <fieldset class="form-group">
-                            <form:label path="docente">Docente:</form:label>
-                            <form:input path="docente" type="text" class="form-control" required="required" />
-                            <form:errors path="docente" cssClass="text-warning" />
-                        </fieldset>
-                        
-                        <fieldset class="form-group">
+						<fieldset class="form-group">
+							<form:label path="descripcion">Descripcion</form:label>
+							<form:input path="descripcion" type="text" class="form-control"
+								required="required" />
+							<form:errors path="descripcion" cssClass="text-warning" />
+						</fieldset>
+						
+						 <fieldset class="form-group">
                             <form:label path="salon">Salon:</form:label>
-                            <form:input path="salon" type="text" class="form-control" required="required" />
+                            <form:input path="salon" type="number" class="form-control" required="required" />
                             <form:errors path="salon" cssClass="text-warning" />
                         </fieldset>
-                        
-                        <fieldset class="form-group">
-                            <form:label path="horario">Horario:</form:label>
-                            <form:input path="horario" type="number" class="form-control" required="required" />
-                            <form:errors path="horario" cssClass="text-warning" />
-                        </fieldset>
-                        
+
 						<fieldset class="form-group">
-						    <form:label path="estado">Estado:</form:label>
-						    <form:select path="estado" class="form-control" required="required">
-						        <form:option value="">Selecciona un estado</form:option>
-						        <form:options items="${estados}" itemValue="id" itemLabel="nombre" />
-						    </form:select>
-						    <form:errors path="estado" cssClass="text-warning" />
+                            <form:label path="horarioInicio">Horario inicio:</form:label>
+                            <form:input path="horarioInicio" type="text" class="form-control" required="required" />
+                            <form:errors path="horarioInicio" cssClass="text-warning" />
 						</fieldset>
-
-
+						
+						<fieldset class="form-group">
+                            <form:label path="horarioFin">Horario fin:</form:label>
+                            <form:input path="horarioFin" type="text" class="form-control" required="required" />
+                            <form:errors path="horarioFin" cssClass="text-warning" />
+						</fieldset>
+   
+						<fieldset class="form-group">
+						    <form:label path="docente">Docente:</form:label>
+						    <form:select path="docente" class="form-control" required="required">
+						        <form:option value="">Selecciona un docente</form:option>
+						        <form:options items="${docentes}" itemValue="id" itemLabel="nombre" />
+						    </form:select>
+						    <form:errors path="docente" cssClass="text-warning" />
+						</fieldset>
 
                         <button type="submit" class="btn btn-success">Guardar</button>
                     </form:form>

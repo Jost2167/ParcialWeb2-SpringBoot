@@ -31,8 +31,8 @@ public class ClaseService implements IClaseService {
 	}
 
 	@Override
-	public void addClase(String nombre, int horario, String docente, String salon, String estado) {
-		claseRepository.save(new Clase(nombre,horario,docente,salon,estado));
+	public void addClase(String nombre,String descripcion, int salon, String horarioInicio, String horarioFin, String docente) {
+		claseRepository.save(new Clase(nombre,descripcion,salon,horarioInicio,horarioFin,docente));
 	}
 
 	@Override

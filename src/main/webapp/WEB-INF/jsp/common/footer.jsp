@@ -1,16 +1,9 @@
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script
-	src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
-<script>
-	$('#targetDate').datepicker({
-		format : 'dd/mm/yyyy'
-	});
-</script>
 
+ 	<div class="footer" style="height: 30px;">
+    <p>&copy; John Stiven Sanchez Burbano. Todos los derechos reservados. 2024</p>
+</div>
 
- 	<div class="footer">
-        <p>&copy; John Stiven Sanchez Burbano. Todos los derechos reservados. 2024</a>.</p>
-    </div>
 </body>
 </html>

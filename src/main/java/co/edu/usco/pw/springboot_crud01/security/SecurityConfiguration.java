@@ -24,7 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
             .antMatchers("/login").permitAll()
-            .antMatchers("/").access("hasAnyRole('DOCENTE','RECTOR')")
+            .antMatchers("/").access("hasAnyRole('ESTUDIANTE','RECTOR')")
             .antMatchers("/add-clase").access("hasRole('RECTOR')")
             .antMatchers("/delete-clase").access("hasRole('RECTOR')")
             .antMatchers("/update-clase").access("hasRole('RECTOR')")

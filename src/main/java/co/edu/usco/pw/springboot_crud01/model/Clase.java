@@ -21,73 +21,97 @@ public class Clase {
 	private String userName="RECTOR";
 	
 	
-	@Size(max = 20, message = "Longuitud máxima 20 caracteres")
+	@Size(max = 30, message = "Longuitud máxima 30 caracteres")
 	private String nombre;
 	
-	
-	private int horario;
-	
-	
 	@Size(max = 100, message = "Longuitud máxima 100 caracteres")
+	private String descripcion;
+
+	private int salon;
+	
+	private String horarioInicio;
+	
+	private String horarioFin;
+	
 	private String docente;
-	
-	
-	private String salon;
-	
-	
-	private String estado;
-	
-	public Clase() {}
 
-	public Clase(String nombre, int horario, String docente, String salon, String estado) {
-	    this("rector", nombre, horario, docente, salon, estado);
+	public Clase() {
+		super();
 	}
 
-	public Clase(String userName, String nombre, int horario, String docente, String salon, String estado) {
-		this.userName=userName;
-		this.nombre=nombre;
-		this.horario=horario;
-		this.docente=docente;
-		this.salon=salon;
-		this.estado=estado;
+	public Clase(String nombre,String descripcion, int salon, String horarioInicio, String horarioFin, String docente) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.salon = salon;
+		this.horarioInicio = horarioInicio;
+		this.horarioFin = horarioFin;
+		this.docente = docente;
 	}
-	
-	
+
 	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+
+	public void setId(long id) {
 		this.id = id;
 	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getHorario() {
-		return horario;
+
+	public String getDescripcion() {
+		return descripcion;
 	}
-	public void setHorario(int horario) {
-		this.horario = horario;
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
+
+	public int getSalon() {
+		return salon;
+	}
+
+	public void setSalon(int salon) {
+		this.salon = salon;
+	}
+
+	public String getHorarioInicio() {
+		return horarioInicio;
+	}
+
+	public void setHorarioInicio(String horarioInicio) {
+		this.horarioInicio = horarioInicio;
+	}
+
+	public String getHorarioFin() {
+		return horarioFin;
+	}
+
+	public void setHorarioFin(String horarioFin) {
+		this.horarioFin = horarioFin;
+	}
+
 	public String getDocente() {
 		return docente;
 	}
+
 	public void setDocente(String docente) {
 		this.docente = docente;
 	}
-	public String getSalon() {
-		return salon;
-	}
-	public void setSalon(String salon) {
-		this.salon = salon;
-	}
-	public String getEstado() {
-		return estado;
-	}
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-	
+
+
 }

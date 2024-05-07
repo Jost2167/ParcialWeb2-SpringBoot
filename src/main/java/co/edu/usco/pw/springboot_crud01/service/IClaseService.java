@@ -13,7 +13,7 @@ public interface IClaseService {
 
 	void updateClase(Clase clase);
 
-	void addClase(String nombre, int horario, String docente, String salon, String estado);
+	void addClase(String nombre,String descripcion, int salon, String horarioInicio, String horarioFin, String docente);
 
 	void deleteClase(long id);
 	
