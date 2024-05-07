@@ -2,6 +2,8 @@ package co.edu.usco.pw.springboot_crud01.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -19,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import co.edu.usco.pw.springboot_crud01.model.Clase;
+import co.edu.usco.pw.springboot_crud01.model.Estado;
 import co.edu.usco.pw.springboot_crud01.service.IClaseService;
+import co.edu.usco.pw.springboot_crud01.service.IEstadoService;
 
 @Controller
 public class ClaseController {
@@ -27,6 +31,11 @@ public class ClaseController {
 	@Autowired
 	private IClaseService claseService;
 
+	 @Autowired
+	 private IEstadoService estadoService;
+	 
+	 
+	
 	@RequestMapping(value = "/list-clases", method = RequestMethod.GET)
 	public String showClases(ModelMap model) {
 		model.put("clases", claseService.getClasesByUser("RECTOR"));
@@ -49,6 +58,8 @@ public class ClaseController {
 	@RequestMapping(value = "/add-clase", method = RequestMethod.GET)
 	public String showAddClasePage(ModelMap model) {
 		model.addAttribute("clase", new Clase());
+		List<Estado> estados = estadoService.estados();
+		model.addAttribute("estados", estados);
 		return "clase";
 	}
 
@@ -72,10 +83,19 @@ public class ClaseController {
 
 	@RequestMapping(value = "/update-clase", method = RequestMethod.GET)
 	public String showUpdateClasePage(@RequestParam long id, ModelMap model) {
-		Clase clase = claseService.getClaseById(id).get();
-		model.put("clase", clase);
-		return "clase";
+	    Optional<Clase> optionalClase = claseService.getClaseById(id);
+	    if (optionalClase.isPresent()) {
+	        Clase clase = optionalClase.get();
+	        model.put("clase", clase);
+	    } else {
+	        return "error";
+	    }
+
+	    List<Estado> estados = estadoService.estados();
+	    model.addAttribute("estados", estados);
+	    return "clase";
 	}
+
 
 	@RequestMapping(value = "/update-clase", method = RequestMethod.POST)
 	public String updateClase(ModelMap model, @Valid Clase clase, BindingResult result) {

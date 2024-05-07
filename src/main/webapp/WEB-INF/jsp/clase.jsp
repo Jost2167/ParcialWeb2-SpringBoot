@@ -36,11 +36,14 @@
                             <form:errors path="horario" cssClass="text-warning" />
                         </fieldset>
                         
-                        <fieldset class="form-group">
-                            <form:label path="estado">Estado:</form:label>
-                            <form:input path="estado" type="text" class="form-control" required="required" />
-                            <form:errors path="estado" cssClass="text-warning" />
-                        </fieldset>
+						<fieldset class="form-group">
+						    <form:label path="estado">Estado:</form:label>
+						    <form:select path="estado" class="form-control" required="required">
+						        <form:option value="">Selecciona un estado</form:option>
+						        <form:options items="${estados}" itemValue="id" itemLabel="nombre" />
+						    </form:select>
+						    <form:errors path="estado" cssClass="text-warning" />
+						</fieldset>
 
 
 
