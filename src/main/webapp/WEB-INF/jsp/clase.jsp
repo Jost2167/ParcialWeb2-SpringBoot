@@ -47,7 +47,7 @@
 						    <form:label path="docente">Docente:</form:label>
 						    <form:select path="docente" class="form-control" required="required">
 						        <form:option value="">Selecciona un docente</form:option>
-						        <form:options items="${docentes}" itemValue="id" itemLabel="nombre" />
+						        <form:options items="${docentes}" itemValue="nombre" itemLabel="nombre" />
 						    </form:select>
 						    <form:errors path="docente" cssClass="text-warning" />
 						</fieldset>
